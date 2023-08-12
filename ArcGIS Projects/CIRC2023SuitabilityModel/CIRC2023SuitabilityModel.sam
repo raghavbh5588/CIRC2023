@@ -3,9 +3,15 @@
     "Info": {
       "ModelNames": [
         "CIRC2023 Suitability Model",
-        "Communications Disk Suitability Model"
+        "Communications Disk Suitability Model",
+        "Vehicle Hangar Suitability Model",
+        "Landing Field Suitability Model",
+        "New Suitability Model"
       ],
       "ModelTypes": [
+        "Suitability",
+        "Suitability",
+        "Suitability",
         "Suitability",
         "Suitability"
       ]
@@ -2013,6 +2019,2066 @@
         "SourcesDataItems": "[\"PotentialHabitationComplexLocations\",\"HabitationComplexSuitabilitymap\",\"Transformed TaskAreaElevation\",\"Transformed TaskAreaAspect\",\"Transformed TaskAreaSlope\",\"Transformed TaskAreaWaterProximity\",\"TaskAreaSlope.tif\",\"TaskAreaElevation.tif\",\"TaskAreaAspect.tif\",\"TaskAreaWaterProximity.tif\"]",
         "LayerPathMapping": "[{\"LayerName\":\"PotentialHabitationComplexLocations\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\PotentialHabitationComplexLocations\",\"LayerURI\":\"CIMPATH=map/potentialhabitationcomplexlocations.json\"},{\"LayerName\":\"HabitationComplexSuitabilitymap\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\Suitability_map\",\"LayerURI\":\"CIMPATH=map/xf55e5c83_6fdc_42e2_a804_a6c76b0353bcy0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaElevation\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/x21ffe68a_7c39_4021_a0c8_e470929034f1y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaAspect\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/xb1eefed1_58bb_41f0_a4cd_8588e689cf17y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaSlope\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/xe8d1beb9_b5e6_42c3_a06b_873a5e706ea2y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaWaterProximity\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\WaterProximityRaster\\\\TaskAreaWaterProximity.tif\",\"LayerURI\":\"CIMPATH=map/x946962ac_c66c_41eb_b9e7_e7923197f60cy0_afr.json\"},{\"LayerName\":\"TaskAreaSlope.tif\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/taskareaslope_tif.json\"},{\"LayerName\":\"TaskAreaElevation.tif\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/taskareaelevation_tif.json\"},{\"LayerName\":\"TaskAreaWaterProximity.tif\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\WaterProximityRaster\\\\TaskAreaWaterProximity.tif\",\"LayerURI\":\"CIMPATH=map/taskareawaterproximity_tif2.json\"},{\"LayerName\":\"TaskAreaAspect.tif\",\"LayerPath\":\"C:\\\\Users\\\\ragha\\\\OneDrive\\\\Documents\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/taskareaaspect_tif2.json\"}]",
         "AFRDataParams": []
+      }
+    },
+    "Vehicle Hangar Suitability Model": {
+      "General": {
+        "Version": "2.0",
+        "ModelName": "Vehicle Hangar Suitability Model",
+        "ModelType": "Suitability",
+        "CreateDate": "2023-08-12 1:06:39 PM",
+        "ModifyDate": "2023-08-12 1:28:46 PM",
+        "CriterionCount": 3,
+        "QueryCount": 0
+      },
+      "Control": {
+        "WeightByIndex": 0,
+        "ScaleIndex": 4,
+        "OutRaster": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\VehicleHangarSuitabilitymap",
+        "SummaryReport": "",
+        "AutoCalculate": true,
+        "ModelInputIndex": 0,
+        "WeightMethodIndex": 0
+      },
+      "Suitability": {
+        "CriteriaNames": [
+          "TaskAreaAspect",
+          "TaskAreaElevation",
+          "TaskAreaSlope"
+        ],
+        "XformNames": [
+          "Transformed TaskAreaAspect",
+          "Transformed TaskAreaElevation",
+          "Transformed TaskAreaSlope"
+        ],
+        "CriteriaURIs": [
+          "CIMPATH=map/taskareaaspect_tif.json",
+          "CIMPATH=map/taskareaelevation_tif2.json",
+          "CIMPATH=map/taskareaslope_tif2.json"
+        ],
+        "TransformURIs": [
+          "CIMPATH=map/xbb1423be_6aa5_406e_9c4a_4a1fb21b699ey0_afr.json",
+          "CIMPATH=map/x72f07e7b_e424_4375_8b86_2701e2b4f36by0_afr.json",
+          "CIMPATH=map/x3d2744a6_c2ff_4178_85b6_40755468048dy0_afr.json"
+        ],
+        "XmlDataConns": [
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaAspect.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaElevation.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaSlope.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>"
+        ],
+        "XmlXfmConns": [
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaAspect.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaAspect.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\; RasterDataset = TaskAreaAspect.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;6&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;43.222183227538999&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;247&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;xae4ce439_9168_4bef_8f79_651e52614cf2y0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaElevation.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaElevation.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\; RasterDataset = TaskAreaElevation.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;684.87127685547&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;695.46740722656&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x72f07e7b_e424_4375_8b86_2701e2b4f36by0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaSlope.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaSlope.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\; RasterDataset = TaskAreaSlope.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;53&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x3d2744a6_c2ff_4178_85b6_40755468048dy0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>"
+        ],
+        "WeightValues": [
+          4.0,
+          5.0,
+          8.0
+        ],
+        "MinWeights": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "MaxWeights": [
+          8.0,
+          8.0,
+          8.0
+        ],
+        "IsSelected": [
+          false,
+          false,
+          false
+        ],
+        "TransformCategory": [
+          2,
+          2,
+          2
+        ],
+        "TransformParameters": [
+          {
+            "ContinuousTransformParams": [
+              {
+                "Gaussian": {
+                  "MidPoint": 145.1110916137695,
+                  "PointSpread": 0.0008872006704908201,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Small": {
+                  "MidPoint": 145.1110916137695,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Large": {
+                  "MidPoint": 145.1110916137695,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Near": {
+                  "MidPoint": 145.1110916137695,
+                  "PointSpread": 0.0034677571998152548,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSSmall": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSLarge": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Linear": {
+                  "MinimumValue": 43.222183227539,
+                  "MaximumValue": 247.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "SymmetricLinear": {
+                  "MinimumValue": 43.222183227539,
+                  "MaximumValue": 247.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Exponential": {
+                  "InputShift": 43.222183227539,
+                  "BaseFactor": 0.01129948847948018,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Logarithm": {
+                  "InputShift": 43.19703194317882,
+                  "Factor": 108.07725719021737,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Power": {
+                  "InputShift": 42.222183227539,
+                  "Exponent": 0.4326601457273106,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticGrowth": {
+                  "MinimumValue": 43.222183227539,
+                  "MaximumValue": 247.0,
+                  "YInterceptPct": 1.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticDecay": {
+                  "MinimumValue": 43.222183227539,
+                  "MaximumValue": 247.0,
+                  "YInterceptPct": 99.0,
+                  "LowerThreshold": 43.222183227539,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 247.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              }
+            ]
+          },
+          {
+            "ContinuousTransformParams": [
+              {
+                "Gaussian": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 0.32812633312568823,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Small": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Large": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Near": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 1.2825311025927113,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSSmall": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSLarge": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Linear": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "SymmetricLinear": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Exponential": {
+                  "InputShift": 684.87127685547,
+                  "BaseFactor": 0.21730433774921407,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Logarithm": {
+                  "InputShift": 684.8699690276981,
+                  "Factor": 2078.470794684336,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Power": {
+                  "InputShift": 683.87127685547,
+                  "Exponent": 0.939573148192167,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticGrowth": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "YInterceptPct": 1.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticDecay": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "YInterceptPct": 99.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              }
+            ]
+          },
+          {
+            "ContinuousTransformParams": [
+              {
+                "Gaussian": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 0.013115472227805174,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Small": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Large": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Near": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 0.051263794944820223,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSSmall": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSLarge": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Linear": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "SymmetricLinear": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Exponential": {
+                  "InputShift": 0.0,
+                  "BaseFactor": 0.04344500175460464,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Logarithm": {
+                  "InputShift": -0.006541526905147808,
+                  "Factor": 415.5424059052501,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Power": {
+                  "InputShift": -1.0,
+                  "Exponent": 0.5772359744023721,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticGrowth": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "YInterceptPct": 1.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticDecay": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "YInterceptPct": 99.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              }
+            ]
+          }
+        ],
+        "FromScale": 1.0,
+        "ToScale": 10.0,
+        "CriteriaState": [
+          4,
+          4,
+          6
+        ],
+        "TableConnection": [
+          "",
+          "",
+          ""
+        ],
+        "HasJoins": [
+          false,
+          false,
+          false
+        ],
+        "HasSavedTransform": [
+          false,
+          false,
+          false
+        ],
+        "SavedTransformXML": [
+          "",
+          "",
+          ""
+        ],
+        "SavedTransformDataset": [
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\Transformed_TaskAreaAspect",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\Transformed_TaskAreaElevation",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\Transformed_TaskAreaSlope"
+        ],
+        "UniqueFieldIndex": [
+          0,
+          0,
+          0
+        ],
+        "UniqueTransformField": [
+          "",
+          "",
+          ""
+        ],
+        "UniqueTransformUsed": [
+          false,
+          false,
+          false
+        ],
+        "RangeFieldIndex": [
+          0,
+          0,
+          0
+        ],
+        "RangeTransformField": [
+          "",
+          "",
+          ""
+        ],
+        "RangeTransformUsed": [
+          false,
+          false,
+          false
+        ],
+        "ContinuousTransformName": [
+          "MSLarge",
+          "MSSmall",
+          "MSSmall"
+        ],
+        "ContinuousTransformType": [
+          5,
+          4,
+          4
+        ],
+        "ContinuousTransformUsed": [
+          true,
+          true,
+          true
+        ],
+        "AllNodata": [
+          false,
+          false,
+          false
+        ],
+        "IsInteger": [
+          false,
+          false,
+          false
+        ],
+        "IsSubmodel": [
+          false,
+          false,
+          false
+        ],
+        "SuitabilityMapLayerName": "VehicleHangarSuitabilitymap",
+        "SuitabilityMapURI": "CIMPATH=map/x59b8b70f_9947_471f_9286_f6bd210cb592y0_afr.json",
+        "XmlSuitability": "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>VehicleHangarSuitabilitymap</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+        "HasFinalSuitability": true,
+        "ActiveCriteriaName": "TaskAreaSlope"
+      },
+      "Query": {
+        "QueryLayerName": "Exploratory query",
+        "QueryLayerXml": "",
+        "QueryLayerColorXml": "",
+        "QueryPickItems": {
+          "QueryPickItemsCount": 12,
+          "QueryLayers": [
+            "PotentialHabitationComplexLocations",
+            "HabitationComplexSuitabilitymap",
+            "Transformed TaskAreaElevation",
+            "PotentialCommunicationsDishLocations",
+            "CommunicationsDishSuitabilitymap",
+            "TaskAreaElevation.tif",
+            "TaskAreaAspect.tif",
+            "TaskAreaSlope.tif",
+            "Transformed TaskAreaAspect",
+            "VehicleHangarSuitabilitymap",
+            "Transformed TaskAreaSlope",
+            "PotentialVehicleHangarLocations"
+          ],
+          "QueryLayerURIs": [
+            "CIMPATH=map/potentialhabitationcomplexlocations.json",
+            "CIMPATH=map/xf55e5c83_6fdc_42e2_a804_a6c76b0353bcy0_afr.json",
+            "CIMPATH=map/x72f07e7b_e424_4375_8b86_2701e2b4f36by0_afr.json",
+            "CIMPATH=map/potentialcommunicationsdishlocations.json",
+            "CIMPATH=map/x2255d759_08f9_4e83_a107_35d45a76b0cby0_afr.json",
+            "CIMPATH=map/taskareaelevation_tif.json",
+            "CIMPATH=map/taskareaaspect_tif.json",
+            "CIMPATH=map/taskareaslope_tif2.json",
+            "CIMPATH=map/xbb1423be_6aa5_406e_9c4a_4a1fb21b699ey0_afr.json",
+            "CIMPATH=map/x59b8b70f_9947_471f_9286_f6bd210cb592y0_afr.json",
+            "CIMPATH=map/x3d2744a6_c2ff_4178_85b6_40755468048dy0_afr.json",
+            "CIMPATH=map/potentialvehiclehangarlocations.json"
+          ],
+          "QueryDataConnects": [
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialHabitationComplexLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>Suitability_map</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaElevation.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaElevation.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\; RasterDataset = TaskAreaElevation.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;684.87127685547&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;695.46740722656&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x72f07e7b_e424_4375_8b86_2701e2b4f36by0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialCommunicationsDishLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>CommunicationsDishSuitabilitymap</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaElevation.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaAspect.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaSlope.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaAspect.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaAspect.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\; RasterDataset = TaskAreaAspect.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;6&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;43.222183227538999&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;247&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;xae4ce439_9168_4bef_8f79_651e52614cf2y0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>VehicleHangarSuitabilitymap</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaSlope.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaSlope.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\; RasterDataset = TaskAreaSlope.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;53&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x3d2744a6_c2ff_4178_85b6_40755468048dy0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialVehicleHangarLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>"
+          ],
+          "QueryTableConnects": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "QueryValueField": [
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE"
+          ],
+          "QueryHasJoins": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "QueryIsInteger": [
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true
+          ],
+          "QueryFields": [
+            [
+              "Value",
+              "Count",
+              "Average",
+              "Total",
+              "Median",
+              "Highest",
+              "Lowest",
+              "CoreArea",
+              "CoreSum",
+              "Edge"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value",
+              "Count",
+              "Average",
+              "Total",
+              "Median",
+              "Highest",
+              "Lowest",
+              "CoreArea",
+              "CoreSum",
+              "Edge"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value",
+              "Count",
+              "Average",
+              "Total",
+              "Median",
+              "Highest",
+              "Lowest",
+              "CoreArea",
+              "CoreSum",
+              "Edge"
+            ]
+          ],
+          "QueryFieldTypes": [
+            [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          ]
+        },
+        "QueryParameters": {
+          "QueryParametersCount": 0,
+          "QueryConjIndex": [],
+          "QueryLayerIndex": [],
+          "QueryFieldIndex": [],
+          "QueryOperatorIndex": [],
+          "QueryValueIndex": [],
+          "QueryValueInput": []
+        }
+      },
+      "Locate": {
+        "TotalArea": "0.007576767000020575",
+        "AreaUnits": "SQUARE_KILOMETERS",
+        "OutRegionRaster": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\PotentialVehicleHangarLocations",
+        "RegionCount": "1",
+        "RegionShape": "SQUARE",
+        "TradeOffPct": "50",
+        "EvalMethod": "HIGHEST_AVERAGE_VALUE",
+        "RegionMinArea": "",
+        "RegionMaxArea": "",
+        "MaxDistBetRegions": "",
+        "MinDistBetRegions": "",
+        "DistanceUnits": "KILOMETERS",
+        "ExistingRegions": "",
+        "NeighborGrowth": "EIGHT",
+        "IslandsAllowed": "true",
+        "SeedCount": "AUTO",
+        "ResolutionGrowth": "AUTO",
+        "SelectionMethod": "AUTO",
+        "LocateRegionsXml": "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialVehicleHangarLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+        "LocateRegionsLayerName": "PotentialVehicleHangarLocations",
+        "InLocateRaster": "Vehicle Hangar Suitability Model\\VehicleHangarSuitabilitymap",
+        "RegionOrientation": "0"
+      },
+      "Environments": {
+        "workspace": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb",
+        "scratchWorkspace": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb",
+        "outputCoordinateSystem": "",
+        "geographicTransformations": "",
+        "extent": "DEFAULT",
+        "parallelProcessingFactor": "",
+        "cellSize": "MAXOF",
+        "cellSizeProjectionMethod": "Convert units",
+        "mask": "",
+        "snapRaster": "",
+        "configKeyword": "",
+        "autoCommit": "1000",
+        "compression": "LZ77",
+        "tileSize": "128 128",
+        "rasterStatistics": "STATISTICS 1 1"
+      },
+      "SuitabilityEnvironments": {
+        "extent": "-12539358.641635356 6696352.533912654 -12538974.524523443 6696549.787844182",
+        "cellSize": "MAXOF",
+        "outputCoordinateSystem": "",
+        "geographicTransformations": "",
+        "parallelProcessingFactor": "",
+        "cellSizeProjectionMethod": "Convert units",
+        "mask": "",
+        "snapRaster": "",
+        "configKeyword": "",
+        "autoCommit": "1000",
+        "compression": "LZ77",
+        "tileSize": "128 128"
+      },
+      "LocateEnvironments": {
+        "extent": "DEFAULT",
+        "cellSize": "MAXOF",
+        "outputCoordinateSystem": "",
+        "geographicTransformations": "",
+        "cellSizeProjectionMethod": "Convert units",
+        "mask": "",
+        "snapRaster": "",
+        "configKeyword": "",
+        "autoCommit": "1000",
+        "compression": "LZ77",
+        "rasterStatistics": "STATISTICS 1 1",
+        "tileSize": "128 128"
+      },
+      "SourcesDataGroups": {
+        "LocalDataParams": [
+          0,
+          "TaskAreaAspect",
+          "TaskAreaAspect",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\TaskAreaAspect.tif",
+          10,
+          "TaskAreaElevation",
+          "TaskAreaElevation",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\TaskAreaElevation.tif",
+          9,
+          "TaskAreaSlope",
+          "TaskAreaSlope",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\TaskAreaSlope.tif"
+        ],
+        "ServiceDataParams": [],
+        "NoXFMDataParams": [],
+        "SourcesDataItems": "[\"TaskAreaAspect.tif\",\"PotentialHabitationComplexLocations\",\"HabitationComplexSuitabilitymap\",\"Transformed TaskAreaElevation\",\"Transformed TaskAreaAspect\",\"Transformed TaskAreaSlope\",\"Transformed TaskAreaWaterProximity\",\"PotentialCommunicationsDishLocations\",\"CommunicationsDishSuitabilitymap\",\"TaskAreaSlope.tif\",\"TaskAreaElevation.tif\",\"TaskAreaWaterProximity.tif\"]",
+        "LayerPathMapping": "[{\"LayerName\":\"TaskAreaAspect.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/taskareaaspect_tif2.json\"},{\"LayerName\":\"PotentialHabitationComplexLocations\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\PotentialHabitationComplexLocations\",\"LayerURI\":\"CIMPATH=map/potentialhabitationcomplexlocations.json\"},{\"LayerName\":\"HabitationComplexSuitabilitymap\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\Suitability_map\",\"LayerURI\":\"CIMPATH=map/xf55e5c83_6fdc_42e2_a804_a6c76b0353bcy0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaElevation\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/x21ffe68a_7c39_4021_a0c8_e470929034f1y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaAspect\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/xb1eefed1_58bb_41f0_a4cd_8588e689cf17y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaSlope\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/xe8d1beb9_b5e6_42c3_a06b_873a5e706ea2y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaWaterProximity\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\WaterProximityRaster\\\\TaskAreaWaterProximity.tif\",\"LayerURI\":\"CIMPATH=map/x946962ac_c66c_41eb_b9e7_e7923197f60cy0_afr.json\"},{\"LayerName\":\"PotentialCommunicationsDishLocations\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\PotentialCommunicationsDishLocations\",\"LayerURI\":\"CIMPATH=map/potentialcommunicationsdishlocations.json\"},{\"LayerName\":\"CommunicationsDishSuitabilitymap\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\CommunicationsDishSuitabilitymap\",\"LayerURI\":\"CIMPATH=map/x2255d759_08f9_4e83_a107_35d45a76b0cby0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaWaterProximity\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\WaterProximityRaster\\\\TaskAreaWaterProximity.tif\",\"LayerURI\":\"CIMPATH=map/x448b3811_bfba_4e97_90fe_c519cbb7efe6y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaElevation\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/x3ac7db12_7cc1_4838_aace_de7027d7e001y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaSlope\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/x32b23e34_1ab6_464e_a591_c28c0b736952y0_afr.json\"},{\"LayerName\":\"TaskAreaSlope.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/taskareaslope_tif.json\"},{\"LayerName\":\"TaskAreaElevation.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/taskareaelevation_tif.json\"},{\"LayerName\":\"TaskAreaWaterProximity.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\WaterProximityRaster\\\\TaskAreaWaterProximity.tif\",\"LayerURI\":\"CIMPATH=map/taskareawaterproximity_tif2.json\"},{\"LayerName\":\"TaskAreaAspect.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/taskareaaspect_tif.json\"},{\"LayerName\":\"TaskAreaElevation.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/taskareaelevation_tif2.json\"},{\"LayerName\":\"TaskAreaSlope.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/taskareaslope_tif2.json\"}]",
+        "AFRDataParams": []
+      }
+    },
+    "Landing Field Suitability Model": {
+      "General": {
+        "Version": "2.0",
+        "ModelName": "Landing Field Suitability Model",
+        "ModelType": "Suitability",
+        "CreateDate": "2023-08-12 1:28:46 PM",
+        "ModifyDate": "2023-08-12 1:36:36 PM",
+        "CriterionCount": 3,
+        "QueryCount": 0
+      },
+      "Control": {
+        "WeightByIndex": 0,
+        "ScaleIndex": 4,
+        "OutRaster": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\LandingFieldSuitabilitymap",
+        "SummaryReport": "",
+        "AutoCalculate": true,
+        "ModelInputIndex": 0,
+        "WeightMethodIndex": 0
+      },
+      "Suitability": {
+        "CriteriaNames": [
+          "TaskAreaWaterProximity",
+          "TaskAreaElevation",
+          "TaskAreaSlope"
+        ],
+        "XformNames": [
+          "Transformed TaskAreaWaterProximity",
+          "Transformed TaskAreaElevation",
+          "Transformed TaskAreaSlope"
+        ],
+        "CriteriaURIs": [
+          "CIMPATH=map/taskareawaterproximity_tif.json",
+          "CIMPATH=map/taskareaelevation_tif3.json",
+          "CIMPATH=map/taskareaslope_tif3.json"
+        ],
+        "TransformURIs": [
+          "CIMPATH=map/xea038318_976b_4ffe_b3aa_6e9577c62da8y0_afr.json",
+          "CIMPATH=map/x2c02424a_f5d2_425b_8f15_16ffae1e6061y0_afr.json",
+          "CIMPATH=map/x81f0ee35_2c52_4c3a_88ee_f59b65ac4642y0_afr.json"
+        ],
+        "XmlDataConns": [
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaWaterProximity.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaElevation.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaSlope.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>"
+        ],
+        "XmlXfmConns": [
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaWaterProximity.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaWaterProximity.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\; RasterDataset = TaskAreaWaterProximity.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;6&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;919.21588134766&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1063.3924560547&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x7ae67064_6e94_4bd4_ab3a_9523a766000ey0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.975450188&lt;/XMin&gt;&lt;YMin&gt;6696380.6250114245&lt;/YMin&gt;&lt;XMax&gt;-12539107.785450188&lt;/XMax&gt;&lt;YMax&gt;6696521.0850114245&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaElevation.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaElevation.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\; RasterDataset = TaskAreaElevation.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;684.87127685547&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;695.46740722656&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x2c02424a_f5d2_425b_8f15_16ffae1e6061y0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+          "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaSlope.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaSlope.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\; RasterDataset = TaskAreaSlope.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;53&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x81f0ee35_2c52_4c3a_88ee_f59b65ac4642y0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>"
+        ],
+        "WeightValues": [
+          3.0,
+          9.0,
+          8.0
+        ],
+        "MinWeights": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "MaxWeights": [
+          9.0,
+          9.0,
+          9.0
+        ],
+        "IsSelected": [
+          false,
+          false,
+          false
+        ],
+        "TransformCategory": [
+          2,
+          2,
+          2
+        ],
+        "TransformParameters": [
+          {
+            "ContinuousTransformParams": [
+              {
+                "Gaussian": {
+                  "MidPoint": 991.3041687011801,
+                  "PointSpread": 0.001772336837856579,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Small": {
+                  "MidPoint": 991.3041687011801,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Large": {
+                  "MidPoint": 991.3041687011801,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Near": {
+                  "MidPoint": 991.3041687011801,
+                  "PointSpread": 0.006927444978794735,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSSmall": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSLarge": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Linear": {
+                  "MinimumValue": 919.21588134766,
+                  "MaximumValue": 1063.3924560547,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "SymmetricLinear": {
+                  "MinimumValue": 919.21588134766,
+                  "MaximumValue": 1063.3924560547,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Exponential": {
+                  "InputShift": 919.21588134766,
+                  "BaseFactor": 0.01597059090682928,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Logarithm": {
+                  "InputShift": 919.1980863487443,
+                  "Factor": 152.75538039192202,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Power": {
+                  "InputShift": 918.21588134766,
+                  "Exponent": 0.4625568240547814,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticGrowth": {
+                  "MinimumValue": 919.21588134766,
+                  "MaximumValue": 1063.3924560547,
+                  "YInterceptPct": 1.0,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticDecay": {
+                  "MinimumValue": 919.21588134766,
+                  "MaximumValue": 1063.3924560547,
+                  "YInterceptPct": 99.0,
+                  "LowerThreshold": 919.21588134766,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 1063.3924560547,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              }
+            ]
+          },
+          {
+            "ContinuousTransformParams": [
+              {
+                "Gaussian": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 0.32812633312568823,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Small": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Large": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Near": {
+                  "MidPoint": 690.1693420410149,
+                  "PointSpread": 1.2825311025927113,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSSmall": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSLarge": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Linear": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "SymmetricLinear": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Exponential": {
+                  "InputShift": 684.87127685547,
+                  "BaseFactor": 0.21730433774921407,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Logarithm": {
+                  "InputShift": 684.8699690276981,
+                  "Factor": 2078.470794684336,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Power": {
+                  "InputShift": 683.87127685547,
+                  "Exponent": 0.939573148192167,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticGrowth": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "YInterceptPct": 1.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticDecay": {
+                  "MinimumValue": 684.87127685547,
+                  "MaximumValue": 695.46740722656,
+                  "YInterceptPct": 99.0,
+                  "LowerThreshold": 684.87127685547,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 695.46740722656,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              }
+            ]
+          },
+          {
+            "ContinuousTransformParams": [
+              {
+                "Gaussian": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 0.013115472227805174,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Small": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Large": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 5.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Near": {
+                  "MidPoint": 26.5,
+                  "PointSpread": 0.051263794944820223,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSSmall": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "MSLarge": {
+                  "MeanMultiplier": 1.0,
+                  "StdvMultiplier": 1.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Linear": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "SymmetricLinear": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Exponential": {
+                  "InputShift": 0.0,
+                  "BaseFactor": 0.04344500175460464,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Logarithm": {
+                  "InputShift": -0.006541526905147808,
+                  "Factor": 415.5424059052501,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "Power": {
+                  "InputShift": -1.0,
+                  "Exponent": 0.5772359744023721,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticGrowth": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "YInterceptPct": 1.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              },
+              {
+                "LogisticDecay": {
+                  "MinimumValue": 0.0,
+                  "MaximumValue": 53.0,
+                  "YInterceptPct": 99.0,
+                  "LowerThreshold": 0.0,
+                  "BelowThreshold": 0.0,
+                  "UpperThreshold": 53.0,
+                  "AboveThreshold": 0.0,
+                  "InvertFunction": false
+                }
+              }
+            ]
+          }
+        ],
+        "FromScale": 1.0,
+        "ToScale": 10.0,
+        "CriteriaState": [
+          4,
+          4,
+          6
+        ],
+        "TableConnection": [
+          "",
+          "",
+          ""
+        ],
+        "HasJoins": [
+          false,
+          false,
+          false
+        ],
+        "HasSavedTransform": [
+          false,
+          false,
+          false
+        ],
+        "SavedTransformXML": [
+          "",
+          "",
+          ""
+        ],
+        "SavedTransformDataset": [
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\Transformed_TaskAreaWaterProximity",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\Transformed_TaskAreaElevation",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\Transformed_TaskAreaSlope"
+        ],
+        "UniqueFieldIndex": [
+          0,
+          0,
+          0
+        ],
+        "UniqueTransformField": [
+          "",
+          "",
+          ""
+        ],
+        "UniqueTransformUsed": [
+          false,
+          false,
+          false
+        ],
+        "RangeFieldIndex": [
+          0,
+          0,
+          0
+        ],
+        "RangeTransformField": [
+          "",
+          "",
+          ""
+        ],
+        "RangeTransformUsed": [
+          false,
+          false,
+          false
+        ],
+        "ContinuousTransformName": [
+          "MSLarge",
+          "MSSmall",
+          "MSSmall"
+        ],
+        "ContinuousTransformType": [
+          5,
+          4,
+          4
+        ],
+        "ContinuousTransformUsed": [
+          true,
+          true,
+          true
+        ],
+        "AllNodata": [
+          false,
+          false,
+          false
+        ],
+        "IsInteger": [
+          false,
+          false,
+          false
+        ],
+        "IsSubmodel": [
+          false,
+          false,
+          false
+        ],
+        "SuitabilityMapLayerName": "LandingFieldSuitabilitymap",
+        "SuitabilityMapURI": "CIMPATH=map/x8711abbe_aa3d_485a_ba39_996f31c75705y0_afr.json",
+        "XmlSuitability": "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>LandingFieldSuitabilitymap</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+        "HasFinalSuitability": true,
+        "ActiveCriteriaName": "TaskAreaSlope"
+      },
+      "Query": {
+        "QueryLayerName": "Exploratory query",
+        "QueryLayerXml": "",
+        "QueryLayerColorXml": "",
+        "QueryPickItems": {
+          "QueryPickItemsCount": 16,
+          "QueryLayers": [
+            "TaskAreaAspect.tif",
+            "PotentialVehicleHangarLocations",
+            "VehicleHangarSuitabilitymap",
+            "Transformed TaskAreaSlope",
+            "Transformed TaskAreaElevation",
+            "Transformed TaskAreaAspect",
+            "TaskAreaSlope.tif",
+            "TaskAreaElevation.tif",
+            "PotentialHabitationComplexLocations",
+            "HabitationComplexSuitabilitymap",
+            "Transformed TaskAreaWaterProximity",
+            "PotentialCommunicationsDishLocations",
+            "CommunicationsDishSuitabilitymap",
+            "TaskAreaWaterProximity.tif",
+            "LandingFieldSuitabilitymap",
+            "PotentialLandingFieldLocations"
+          ],
+          "QueryLayerURIs": [
+            "CIMPATH=map/taskareaaspect_tif2.json",
+            "CIMPATH=map/potentialvehiclehangarlocations.json",
+            "CIMPATH=map/x59b8b70f_9947_471f_9286_f6bd210cb592y0_afr.json",
+            "CIMPATH=map/x81f0ee35_2c52_4c3a_88ee_f59b65ac4642y0_afr.json",
+            "CIMPATH=map/x2c02424a_f5d2_425b_8f15_16ffae1e6061y0_afr.json",
+            "CIMPATH=map/xbb1423be_6aa5_406e_9c4a_4a1fb21b699ey0_afr.json",
+            "CIMPATH=map/taskareaslope_tif2.json",
+            "CIMPATH=map/taskareaelevation_tif2.json",
+            "CIMPATH=map/potentialhabitationcomplexlocations.json",
+            "CIMPATH=map/xf55e5c83_6fdc_42e2_a804_a6c76b0353bcy0_afr.json",
+            "CIMPATH=map/xea038318_976b_4ffe_b3aa_6e9577c62da8y0_afr.json",
+            "CIMPATH=map/potentialcommunicationsdishlocations.json",
+            "CIMPATH=map/x2255d759_08f9_4e83_a107_35d45a76b0cby0_afr.json",
+            "CIMPATH=map/taskareawaterproximity_tif2.json",
+            "CIMPATH=map/x8711abbe_aa3d_485a_ba39_996f31c75705y0_afr.json",
+            "CIMPATH=map/potentiallandingfieldlocations.json"
+          ],
+          "QueryDataConnects": [
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaAspect.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialVehicleHangarLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>VehicleHangarSuitabilitymap</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaSlope.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaSlope.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\; RasterDataset = TaskAreaSlope.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;53&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x81f0ee35_2c52_4c3a_88ee_f59b65ac4642y0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaElevation.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaElevation.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\; RasterDataset = TaskAreaElevation.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;5&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;684.87127685547&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;695.46740722656&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x2c02424a_f5d2_425b_8f15_16ffae1e6061y0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaAspect.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaAspect.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\AspectRasters\\TaskAreaAspect\\; RasterDataset = TaskAreaAspect.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;6&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;43.222183227538999&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;247&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;xae4ce439_9168_4bef_8f79_651e52614cf2y0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.960000001&lt;/XMin&gt;&lt;YMin&gt;6696380.6300000008&lt;/YMin&gt;&lt;XMax&gt;-12539107.800000001&lt;/XMax&gt;&lt;YMax&gt;6696521.0600000005&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaSlope.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaElevation.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialHabitationComplexLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>Suitability_map</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>&lt;DataConnections xsi:type='typens:ArrayOfCIMDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;CIMDataConnection xsi:type='typens:CIMStandardDataConnection'&gt;&lt;WorkspaceConnectionString&gt;DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\&lt;/WorkspaceConnectionString&gt;&lt;WorkspaceFactory&gt;Raster&lt;/WorkspaceFactory&gt;&lt;Dataset&gt;TaskAreaWaterProximity.tif&lt;/Dataset&gt;&lt;DatasetType&gt;esriDTAny&lt;/DatasetType&gt;&lt;/CIMDataConnection&gt;&lt;/DataConnections&gt;</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>&lt;XmlRasterDataset xsi:type='typens:FunctionRasterDatasetName' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'&gt;&lt;Function xsi:type='typens:RBFFunction' id='ID1'&gt;&lt;Name&gt;&lt;/Name&gt;&lt;Description&gt;&lt;/Description&gt;&lt;PixelType&gt;F32&lt;/PixelType&gt;&lt;/Function&gt;&lt;Arguments xsi:type='typens:RBFFunctionArguments' id='ID2'&gt;&lt;Names xsi:type='typens:ArrayOfString' id='ID3'&gt;&lt;String&gt;Raster&lt;/String&gt;&lt;String&gt;RBFTransformType&lt;/String&gt;&lt;String&gt;RBFLowerThreshold&lt;/String&gt;&lt;String&gt;RBFValueBelowThreshold&lt;/String&gt;&lt;String&gt;RBFUpperThreshold&lt;/String&gt;&lt;String&gt;RBFValueAboveThreshold&lt;/String&gt;&lt;String&gt;RBFFromScale&lt;/String&gt;&lt;String&gt;RBFToScale&lt;/String&gt;&lt;String&gt;RBFEnvironment&lt;/String&gt;&lt;String&gt;RBFMeanMultiplier&lt;/String&gt;&lt;String&gt;RBFStdvMultiplier&lt;/String&gt;&lt;/Names&gt;&lt;Values xsi:type='typens:ArrayOfAnyType' id='ID4'&gt;&lt;AnyType xsi:type='typens:Raster' id='ID5'&gt;&lt;RasterBandCollectionNames xsi:type='typens:ArrayOfRasterBandCollectionName' id='ID6'&gt;&lt;RasterBandCollectionName xsi:type='typens:RasterBandCollectionName' id='ID7'&gt;&lt;NameString&gt;&lt;/NameString&gt;&lt;DatasetName xsi:type='typens:RasterDatasetName' id='ID8'&gt;&lt;WorkspaceName xsi:type='typens:WorkspaceName' id='ID9'&gt;&lt;NameString&gt;Raster Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\;&lt;/NameString&gt;&lt;PathName&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\&lt;/PathName&gt;&lt;BrowseName&gt;Raster Data&lt;/BrowseName&gt;&lt;WorkspaceFactoryProgID&gt;esriDataSourcesRaster.RasterWorkspaceFactory&lt;/WorkspaceFactoryProgID&gt;&lt;WorkspaceType&gt;esriFileSystemWorkspace&lt;/WorkspaceType&gt;&lt;ConnectionProperties xsi:type='typens:PropertySet' id='ID10'&gt;&lt;PropertyArray xsi:type='typens:ArrayOfPropertySetProperty' id='ID11'&gt;&lt;PropertySetProperty xsi:type='typens:PropertySetProperty' id='ID12'&gt;&lt;Key&gt;DATABASE&lt;/Key&gt;&lt;Value xsi:type='xs:string'&gt;C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\&lt;/Value&gt;&lt;/PropertySetProperty&gt;&lt;/PropertyArray&gt;&lt;/ConnectionProperties&gt;&lt;/WorkspaceName&gt;&lt;Name&gt;TaskAreaWaterProximity.tif&lt;/Name&gt;&lt;NameString&gt;RASTER: Workspace = C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\; RasterDataset = TaskAreaWaterProximity.tif;&lt;/NameString&gt;&lt;Category&gt;Raster Dataset&lt;/Category&gt;&lt;/DatasetName&gt;&lt;BandIDs xsi:type='typens:ArrayOfInt' id='ID13'&gt;&lt;Int&gt;0&lt;/Int&gt;&lt;/BandIDs&gt;&lt;/RasterBandCollectionName&gt;&lt;/RasterBandCollectionNames&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:int'&gt;6&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;919.21588134766&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1063.3924560547&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;0&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;10&lt;/AnyType&gt;&lt;AnyType xsi:type='typens:XMLPersistedObject' id='ID14'&gt;&lt;Bytes&gt;+cRJNcL50xGfZADAT47R1wAAAAADAAAAzacS8M0x0xGfSwDAT47R1wEAAAACAAAAHAAAAFkARQBT\nAF8AVwBPAFIASwBTAFAAQQBDAEUAAAARADVacePREaqCAMBPozoVAgAAAAEAbgAAAEMAOgBcAFUA\ncwBlAHIAcwBcAEwAWQBTAEUAfgAxAFwAQQBwAHAARABhAHQAYQBcAEwAbwBjAGEAbABcAFQAZQBt\nAHAAXABBAHIAYwBHAEkAUwBQAHIAbwBUAGUAbQBwADIAMQAxADgANABcAAAAlgAAAFIAYQBzAHQA\nZQByACAAVwBvAHIAawBzAHAAYQBjAGUAIAA9ACAAQwA6AFwAVQBzAGUAcgBzAFwATABZAFMARQB+\nADEAXABBAHAAcABEAGEAdABhAFwATABvAGMAYQBsAFwAVABlAG0AcABcAEEAcgBjAEcASQBTAFAA\ncgBvAFQAZQBtAHAAMgAxADEAOAA0AFwAOwAAABgAAABSAGEAcwB0AGUAcgAgAEQAYQB0AGEAAAAR\nWo5Ym9DREap8AMBPozoVAwAAAAEAAQAAABIAAABEAEEAVABBAEIAQQBTAEUAAAAIAG4AAABDADoA\nXABVAHMAZQByAHMAXABMAFkAUwBFAH4AMQBcAEEAcABwAEQAYQB0AGEAXABMAG8AYwBhAGwAXABU\nAGUAbQBwAFwAQQByAGMARwBJAFMAUAByAG8AVABlAG0AcAAyADEAMQA4ADQAXAAAAAFj2ZFMkDPS\nEY0lAAD4eAU1AAAAAGvAhrJ5CNIRqsoAwE+jPCAEAAAAAwAQAAAAVQBuAGsAbgBvAHcAbgAAAAIA\nAAAAAAIAAAAAAAIAAAAAAAEAK0Mc6+I2WsIrQxzr4jZawgAAAAAAiMNAAAAAAABq+MAAAAAAAIjD\nQAAAAAAAavjAAAAAAACIw0D8qfHSTWJQP/yp8dJNYlA//Knx0k1iUD/Q6ZcyoZPSEZ8zAMBPjtHX\nBQAAAAUAAAACAAAAAQAAAAMAAAAQAAAATgBPAF8ATQBBAFMASwAAAAAAAQAAAAEAAAABAAAASwAA\nAP////8BAAAAAQAAAIAAAACAAAAA/////wIAAAAAABIAAABEAEUARgBBAFUATABUAFMAAAAAAAAA\nAAAAAAAAAAAAAAAAAQAAAA4AAAByAGEAcwB0AGUAcgAAAAwAAABzAGgAYQBwAGUAAAAAAAAAAAAA\nAAAAAAAAAAAA&lt;/Bytes&gt;&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;AnyType xsi:type='xs:double'&gt;1&lt;/AnyType&gt;&lt;/Values&gt;&lt;/Arguments&gt;&lt;Properties xsi:nil='true'/&gt;&lt;Metadata&gt;&lt;/Metadata&gt;&lt;BrowseName&gt;x7ae67064_6e94_4bd4_ab3a_9523a766000ey0.afr&lt;/BrowseName&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' id='ID15'&gt;&lt;WKT&gt;PROJCS[&amp;quot;WGS_1984_Web_Mercator_Auxiliary_Sphere&amp;quot;,GEOGCS[&amp;quot;GCS_WGS_1984&amp;quot;,DATUM[&amp;quot;D_WGS_1984&amp;quot;,SPHEROID[&amp;quot;WGS_1984&amp;quot;,6378137.0,298.257223563]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Mercator_Auxiliary_Sphere&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,0.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,0.0],PARAMETER[&amp;quot;Standard_Parallel_1&amp;quot;,0.0],PARAMETER[&amp;quot;Auxiliary_Sphere_Type&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,3857]]&lt;/WKT&gt;&lt;XOrigin&gt;-20037700&lt;/XOrigin&gt;&lt;YOrigin&gt;-30241100&lt;/YOrigin&gt;&lt;XYScale&gt;148923141.92838538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;102100&lt;/WKID&gt;&lt;LatestWKID&gt;3857&lt;/LatestWKID&gt;&lt;/SpatialReference&gt;&lt;Extent xsi:type='typens:EnvelopeN' id='ID16'&gt;&lt;XMin&gt;-12539256.975450188&lt;/XMin&gt;&lt;YMin&gt;6696380.6250114245&lt;/YMin&gt;&lt;XMax&gt;-12539107.785450188&lt;/XMax&gt;&lt;YMax&gt;6696521.0850114245&lt;/YMax&gt;&lt;SpatialReference xsi:type='typens:ProjectedCoordinateSystem' href='ID15'/&gt;&lt;/Extent&gt;&lt;/XmlRasterDataset&gt;</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialCommunicationsDishLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>CommunicationsDishSuitabilitymap</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster</WorkspaceConnectionString><WorkspaceFactory>Raster</WorkspaceFactory><Dataset>TaskAreaWaterProximity.tif</Dataset><DatasetType>esriDTAny</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>LandingFieldSuitabilitymap</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+            "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialLandingFieldLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>"
+          ],
+          "QueryTableConnects": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "QueryValueField": [
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE",
+            "VALUE"
+          ],
+          "QueryHasJoins": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "QueryIsInteger": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true
+          ],
+          "QueryFields": [
+            [
+              "Value"
+            ],
+            [
+              "Value",
+              "Count",
+              "Average",
+              "Total",
+              "Median",
+              "Highest",
+              "Lowest",
+              "CoreArea",
+              "CoreSum",
+              "Edge"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value",
+              "Count",
+              "Average",
+              "Total",
+              "Median",
+              "Highest",
+              "Lowest",
+              "CoreArea",
+              "CoreSum",
+              "Edge"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value",
+              "Count",
+              "Average",
+              "Total",
+              "Median",
+              "Highest",
+              "Lowest",
+              "CoreArea",
+              "CoreSum",
+              "Edge"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value"
+            ],
+            [
+              "Value",
+              "Count",
+              "Average",
+              "Total",
+              "Median",
+              "Highest",
+              "Lowest",
+              "CoreArea",
+              "CoreSum",
+              "Edge"
+            ]
+          ],
+          "QueryFieldTypes": [
+            [
+              1
+            ],
+            [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1
+            ],
+            [
+              1,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ]
+          ]
+        },
+        "QueryParameters": {
+          "QueryParametersCount": 0,
+          "QueryConjIndex": [],
+          "QueryLayerIndex": [],
+          "QueryFieldIndex": [],
+          "QueryOperatorIndex": [],
+          "QueryValueIndex": [],
+          "QueryValueInput": []
+        }
+      },
+      "Locate": {
+        "TotalArea": "0.006660640800032397",
+        "AreaUnits": "SQUARE_KILOMETERS",
+        "OutRegionRaster": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb\\PotentialLandingFieldLocations",
+        "RegionCount": "1",
+        "RegionShape": "SQUARE",
+        "TradeOffPct": "50",
+        "EvalMethod": "HIGHEST_AVERAGE_VALUE",
+        "RegionMinArea": "",
+        "RegionMaxArea": "",
+        "MaxDistBetRegions": "",
+        "MinDistBetRegions": "",
+        "DistanceUnits": "KILOMETERS",
+        "ExistingRegions": "",
+        "NeighborGrowth": "EIGHT",
+        "IslandsAllowed": "true",
+        "SeedCount": "AUTO",
+        "ResolutionGrowth": "AUTO",
+        "SelectionMethod": "AUTO",
+        "LocateRegionsXml": "<CIMStandardDataConnection xsi:type='typens:CIMStandardDataConnection' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/3.1.0'><WorkspaceConnectionString>DATABASE=C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb</WorkspaceConnectionString><WorkspaceFactory>FileGDB</WorkspaceFactory><Dataset>PotentialLandingFieldLocations</Dataset><DatasetType>esriDTRasterDataset</DatasetType></CIMStandardDataConnection>",
+        "LocateRegionsLayerName": "PotentialLandingFieldLocations",
+        "InLocateRaster": "Landing Field Suitability Model\\LandingFieldSuitabilitymap",
+        "RegionOrientation": "0"
+      },
+      "Environments": {
+        "workspace": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb",
+        "scratchWorkspace": "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\CIRC2023SuitabilityModel\\CIRC2023SuitabilityModel.gdb",
+        "outputCoordinateSystem": "",
+        "geographicTransformations": "",
+        "extent": "DEFAULT",
+        "parallelProcessingFactor": "",
+        "cellSize": "MAXOF",
+        "cellSizeProjectionMethod": "Convert units",
+        "mask": "",
+        "snapRaster": "",
+        "configKeyword": "",
+        "autoCommit": "1000",
+        "compression": "LZ77",
+        "tileSize": "128 128",
+        "rasterStatistics": "STATISTICS 1 1"
+      },
+      "SuitabilityEnvironments": {
+        "extent": "-12539358.641635356 6696364.45772544 -12538974.524523443 6696537.864031396",
+        "cellSize": "MAXOF",
+        "outputCoordinateSystem": "",
+        "geographicTransformations": "",
+        "parallelProcessingFactor": "",
+        "cellSizeProjectionMethod": "Convert units",
+        "mask": "",
+        "snapRaster": "",
+        "configKeyword": "",
+        "autoCommit": "1000",
+        "compression": "LZ77",
+        "tileSize": "128 128"
+      },
+      "LocateEnvironments": {
+        "extent": "DEFAULT",
+        "cellSize": "MAXOF",
+        "outputCoordinateSystem": "",
+        "geographicTransformations": "",
+        "cellSizeProjectionMethod": "Convert units",
+        "mask": "",
+        "snapRaster": "",
+        "configKeyword": "",
+        "autoCommit": "1000",
+        "compression": "LZ77",
+        "rasterStatistics": "STATISTICS 1 1",
+        "tileSize": "128 128"
+      },
+      "SourcesDataGroups": {
+        "LocalDataParams": [
+          12,
+          "TaskAreaWaterProximity",
+          "TaskAreaWaterProximity",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\WaterProximityRaster\\TaskAreaWaterProximity.tif",
+          7,
+          "TaskAreaElevation",
+          "TaskAreaElevation",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\ElevationRasters\\TaskAreaElevation\\TaskAreaElevation.tif",
+          6,
+          "TaskAreaSlope",
+          "TaskAreaSlope",
+          "C:\\Users\\Élyse\\CIRC2023\\ArcGIS Projects\\Rasters\\SlopeRasters\\TaskAreaSlope\\TaskAreaSlope.tif"
+        ],
+        "ServiceDataParams": [],
+        "NoXFMDataParams": [],
+        "SourcesDataItems": "[\"TaskAreaAspect.tif\",\"PotentialVehicleHangarLocations\",\"VehicleHangarSuitabilitymap\",\"Transformed TaskAreaSlope\",\"Transformed TaskAreaElevation\",\"Transformed TaskAreaAspect\",\"TaskAreaSlope.tif\",\"TaskAreaElevation.tif\",\"PotentialHabitationComplexLocations\",\"HabitationComplexSuitabilitymap\",\"PotentialCommunicationsDishLocations\",\"CommunicationsDishSuitabilitymap\",\"TaskAreaWaterProximity.tif\"]",
+        "LayerPathMapping": "[{\"LayerName\":\"TaskAreaAspect.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/taskareaaspect_tif2.json\"},{\"LayerName\":\"PotentialVehicleHangarLocations\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\PotentialVehicleHangarLocations\",\"LayerURI\":\"CIMPATH=map/potentialvehiclehangarlocations.json\"},{\"LayerName\":\"VehicleHangarSuitabilitymap\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\VehicleHangarSuitabilitymap\",\"LayerURI\":\"CIMPATH=map/x59b8b70f_9947_471f_9286_f6bd210cb592y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaSlope\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/x3d2744a6_c2ff_4178_85b6_40755468048dy0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaElevation\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/x72f07e7b_e424_4375_8b86_2701e2b4f36by0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaAspect\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/xbb1423be_6aa5_406e_9c4a_4a1fb21b699ey0_afr.json\"},{\"LayerName\":\"TaskAreaSlope.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/taskareaslope_tif2.json\"},{\"LayerName\":\"TaskAreaElevation.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/taskareaelevation_tif2.json\"},{\"LayerName\":\"TaskAreaAspect.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/taskareaaspect_tif.json\"},{\"LayerName\":\"PotentialHabitationComplexLocations\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\PotentialHabitationComplexLocations\",\"LayerURI\":\"CIMPATH=map/potentialhabitationcomplexlocations.json\"},{\"LayerName\":\"HabitationComplexSuitabilitymap\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\Suitability_map\",\"LayerURI\":\"CIMPATH=map/xf55e5c83_6fdc_42e2_a804_a6c76b0353bcy0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaElevation\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/x21ffe68a_7c39_4021_a0c8_e470929034f1y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaAspect\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\AspectRasters\\\\TaskAreaAspect\\\\TaskAreaAspect.tif\",\"LayerURI\":\"CIMPATH=map/xb1eefed1_58bb_41f0_a4cd_8588e689cf17y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaSlope\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/xe8d1beb9_b5e6_42c3_a06b_873a5e706ea2y0_afr.json\"},{\"LayerName\":\"PotentialCommunicationsDishLocations\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\PotentialCommunicationsDishLocations\",\"LayerURI\":\"CIMPATH=map/potentialcommunicationsdishlocations.json\"},{\"LayerName\":\"CommunicationsDishSuitabilitymap\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\CIRC2023SuitabilityModel\\\\CIRC2023SuitabilityModel.gdb\\\\CommunicationsDishSuitabilitymap\",\"LayerURI\":\"CIMPATH=map/x2255d759_08f9_4e83_a107_35d45a76b0cby0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaElevation\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/x3ac7db12_7cc1_4838_aace_de7027d7e001y0_afr.json\"},{\"LayerName\":\"Transformed TaskAreaSlope\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/x32b23e34_1ab6_464e_a591_c28c0b736952y0_afr.json\"},{\"LayerName\":\"TaskAreaSlope.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/taskareaslope_tif.json\"},{\"LayerName\":\"TaskAreaElevation.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/taskareaelevation_tif.json\"},{\"LayerName\":\"TaskAreaWaterProximity.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\WaterProximityRaster\\\\TaskAreaWaterProximity.tif\",\"LayerURI\":\"CIMPATH=map/taskareawaterproximity_tif2.json\"},{\"LayerName\":\"TaskAreaWaterProximity.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\WaterProximityRaster\\\\TaskAreaWaterProximity.tif\",\"LayerURI\":\"CIMPATH=map/taskareawaterproximity_tif.json\"},{\"LayerName\":\"TaskAreaElevation.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\ElevationRasters\\\\TaskAreaElevation\\\\TaskAreaElevation.tif\",\"LayerURI\":\"CIMPATH=map/taskareaelevation_tif3.json\"},{\"LayerName\":\"TaskAreaSlope.tif\",\"LayerPath\":\"C:\\\\Users\\\\Élyse\\\\CIRC2023\\\\ArcGIS Projects\\\\Rasters\\\\SlopeRasters\\\\TaskAreaSlope\\\\TaskAreaSlope.tif\",\"LayerURI\":\"CIMPATH=map/taskareaslope_tif3.json\"}]",
+        "AFRDataParams": []
+      }
+    },
+    "New Suitability Model": {
+      "General": {
+        "Version": "2.0",
+        "ModelName": "New Suitability Model",
+        "ModelType": "Suitability",
+        "CreateDate": "2023-08-12 1:36:37 PM",
+        "ModifyDate": "2023-08-12 1:36:37 PM",
+        "CriterionCount": 0,
+        "QueryCount": 0
+      },
+      "Control": {
+        "WeightByIndex": 0,
+        "ScaleIndex": 4,
+        "OutRaster": "",
+        "SummaryReport": ""
+      },
+      "Suitability": {
+        "CriteriaNames": [],
+        "XformNames": [],
+        "CriteriaURIs": [],
+        "TransformURIs": [],
+        "XmlDataConns": [],
+        "XmlXfmConns": [],
+        "WeightValues": [],
+        "MinWeights": [],
+        "MaxWeights": [],
+        "IsSelected": [],
+        "TransformCategory": [],
+        "TransformParameters": [],
+        "FromScale": 1.0,
+        "ToScale": 10.0
+      },
+      "Query": {
+        "QueryLayerName": [],
+        "QueryLayerXml": []
+      },
+      "Locate": {
+        "TotalArea": "",
+        "AreaUnits": "",
+        "OutRegionRaster": "",
+        "RegionCount": "",
+        "RegionShape": "",
+        "TradeOffPct": "",
+        "EvalMethod": "",
+        "RegionMinArea": "",
+        "RegionMaxArea": "",
+        "MaxDistBetRegions": "",
+        "MinDistBetRegions": "",
+        "DistanceUnits": "",
+        "ExistingRegions": "",
+        "NeighborGrowth": "",
+        "IslandsAllowed": "",
+        "SeedCount": "",
+        "ResolutionGrowth": "",
+        "SelectionMethod": ""
+      },
+      "Environments": {
+        "workspace": "",
+        "scratchWorkspace": ""
+      },
+      "SuitabilityEnvironments": {
+        "extent": "DEFAULT",
+        "cellSize": "MAXOF"
+      },
+      "LocateEnvironments": {
+        "extent": "DEFAULT",
+        "cellSize": "MAXOF"
+      },
+      "SourcesDataGroups": {
+        "LocalDataParams": [],
+        "ServiceDataParams": [],
+        "NoXFMDataParams": []
       }
     }
   }
